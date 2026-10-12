@@ -11,7 +11,7 @@ export function Hero({ lang }: { lang: Lang }) {
   const reduce = useReducedMotion();
   const d = t(lang).hero;
   return (
-    <section className="relative overflow-hidden bg-ink text-cream">
+    <section className="relative flex min-h-[100svh] overflow-hidden bg-ink text-cream">
       <div className="absolute inset-0">
         <Image
           src="https://fattoriaisola.com/wp-content/uploads/2019/12/parco-villa-da-sopra1.jpg"
@@ -27,10 +27,10 @@ export function Hero({ lang }: { lang: Lang }) {
         initial={reduce ? false : { opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="relative w-full px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-28 lg:px-10"
+        className="relative m-auto w-full px-4 py-20 sm:px-6 sm:py-24 lg:px-10"
       >
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_1fr]">
-          <div>
+        <div className="grid items-stretch gap-10 lg:grid-cols-[1.05fr_1fr]">
+          <div className="flex flex-col justify-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-ink/60 px-4 py-1.5 text-[11px] uppercase tracking-[0.25em] text-gold sm:text-xs">
               {d.badge}
             </p>
@@ -51,8 +51,8 @@ export function Hero({ lang }: { lang: Lang }) {
               </Link>
             </div>
           </div>
-          <div id="prenota" className="scroll-mt-24">
-            <CalendlyEmbed lang={lang} height="h-[600px]" />
+          <div id="prenota" className="flex min-h-[560px] scroll-mt-24 flex-col lg:min-h-0">
+            <CalendlyEmbed lang={lang} />
           </div>
         </div>
         <dl className="mt-10 grid max-w-3xl grid-cols-1 gap-3 text-sm sm:grid-cols-3 sm:gap-4">

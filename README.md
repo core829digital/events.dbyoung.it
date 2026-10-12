@@ -21,6 +21,6 @@ Ogni immagine ha un fallback remoto di sicurezza in `lib/site.ts`, usato solo se
 ## Integrazioni
 
 - **Convex**: `npx convex dev` (login richiesto) genera `convex/_generated/`, poi togliere `"convex"` da `exclude` in `tsconfig.json` e fare deploy. Schema: `events`, `bookings`, `gallery`.
-- **Resend**: verifica `events.dbyoung.it`, `RESEND_API_KEY`, `RESEND_FROM=Isola Events <eventi@dbyoung.it>`, `BOOKING_TO=booking@dbyoung.it`. Senza key, `/api/send` logga e risponde ok (dev).
+- **Resend**: verifica `events.dbyoung.it`, `RESEND_API_KEY`, `RESEND_FROM=Isola Events <contact@dbyoung.it>`, `BOOKING_TO=contact@dbyoung.it`. Senza key, `/api/send` logga e risponde ok (dev).
 - **Calendly**: `NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/core829/dbyoung-events` (già in `.env.local`; riportarlo nelle env Vercel).
 - **Deploy**: push su GitHub → import su Vercel → env vars → dominio `events.dbyoung.it`.

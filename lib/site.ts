@@ -5,8 +5,8 @@ export const site = {
   byline: "di Dimitri Bouterline · DBYoung",
   domain: "events.dbyoung.it",
   location: "Fattoria Isola · Via Vecchia Aretina 70, 52020 Laterina (AR) · Toscana",
-  emailFrom: process.env.RESEND_FROM ?? "Isola Events <eventi@dbyoung.it>",
-  emailTo: process.env.BOOKING_TO ?? "booking@dbyoung.it",
+  emailFrom: process.env.RESEND_FROM ?? "Isola Events <contact@dbyoung.it>",
+  emailTo: process.env.BOOKING_TO ?? "contact@dbyoung.it",
   calendlyUrl:
     process.env.NEXT_PUBLIC_CALENDLY_URL ??
     "https://calendly.com/tuo-nome/call-conoscitiva-30min",

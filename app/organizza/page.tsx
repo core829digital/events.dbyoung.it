@@ -16,7 +16,9 @@ export default async function OrganizzaPage() {
     <div className="w-full px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
       <SectionHeading kicker={d.kicker} title={d.title} sub={d.sub} />
       <div className="mx-auto mt-8 w-full max-w-5xl">
-        <CalendlyEmbed lang={lang} />
+        <div className="min-h-[560px]">
+          <CalendlyEmbed lang={lang} height="h-[700px]" />
+        </div>
       </div>
     </div>
   );

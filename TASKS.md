@@ -43,7 +43,7 @@
 - [ ] Configurare Tailwind theme DBYoung (oro/verde Toscana, serif elegante + sans moderno), font, metadata SEO IT/EN
 - [ ] Pagine: `/` `/eventi` `/eventi/[slug]` `/location` `/organizza` `/grazie` `/privacy` `/api/send`
 - [ ] Componenti 21st.dev-style: hero cinematico, marquee, card eventi, galleria lightbox, CTA call, FAQ, footer
-- [ ] Form "Richiedi preventivo" (Tipo A/B switch) → validazione zod → Convex `bookings` → email Resend a booking@dbyoung.it + conferma utente
+- [x] Contatto unico `contact@dbyoung.it` (mittente + destinatario Resend, footer, errori form)
 - [ ] Embed Calendly (call 30min gratis) con fallback link diretto
 - [ ] `convex/schema.ts`: `events`, `bookings`, `gallery`, `testimonials` + seed eventi demo
 - [ ] README con setup `.env` (`CONVEX_DEPLOYMENT`, `NEXT_PUBLIC_CONVEX_URL`, `RESEND_API_KEY`, `NEXT_PUBLIC_CALENDLY_URL`)
@@ -51,7 +51,7 @@
 ## 4. Integrazioni & Deploy
 
 - [ ] Convex: `npx convex dev` + `npx convex deploy`, seed dati
-- [ ] Resend: dominio `events.dbyoung.it` verificato, mittente `Isola Events <eventi@dbyoung.it>`, template IT/EN
+- [ ] Resend: dominio `events.dbyoung.it` verificato, mittente `Isola Events <contact@dbyoung.it>`, template IT/EN
 - [ ] Calendly: URL reale cliente in `.env` + embed testato (no cookie-wall bloccante)
 - [ ] GitHub: repo `events.dbyoung.it`, branch `main`, commit atomici
 - [ ] Vercel: progetto collegato a GitHub, env vars, dominio `events.dbyoung.it`, test auto-deploy

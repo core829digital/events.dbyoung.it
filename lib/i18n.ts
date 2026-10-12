@@ -72,7 +72,7 @@ const it = {
     sending: "Invio...",
     submit: "Invia la richiesta →",
     note: "Risposta entro 24–48h · oppure prenota subito la call qui sotto",
-    sendError: "Invio non riuscito, riprova o scrivi a booking@dbyoung.it",
+    sendError: "Invio non riuscito, riprova o scrivi a contact@dbyoung.it",
   },
   calendly: {
     title: "Call conoscitiva gratuita · 30 min",
@@ -177,7 +177,7 @@ const en: Dict = {
     sending: "Sending...",
     submit: "Send the request →",
     note: "Reply within 24–48h · or book the call right below",
-    sendError: "Sending failed, please retry or write to booking@dbyoung.it",
+    sendError: "Sending failed, please retry or write to contact@dbyoung.it",
   },
   calendly: {
     title: "Free introductory call · 30 min",
