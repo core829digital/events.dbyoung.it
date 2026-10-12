@@ -14,7 +14,6 @@ export function Navbar({ lang }: { lang: Lang }) {
   const links = [
     { href: "/eventi", label: d.events },
     { href: "/location", label: d.location },
-    { href: "/organizza", label: d.quote },
   ];
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur">
