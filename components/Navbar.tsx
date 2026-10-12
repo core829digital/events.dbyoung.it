@@ -30,10 +30,7 @@ export function Navbar({ lang }: { lang: Lang }) {
           />
           <span className="flex min-w-0 items-baseline gap-2">
             <span className="truncate font-display text-xl tracking-tight text-cream sm:text-2xl">
-              Isola <span className="text-gold">Events</span>
-            </span>
-            <span className="hidden text-xs uppercase tracking-[0.2em] text-cream/60 lg:inline">
-              Fattoria Isola
+              Eventi <span className="text-gold">DBYoung</span>
             </span>
           </span>
         </Link>

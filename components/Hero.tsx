@@ -5,7 +5,18 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Lang } from "@/lib/i18n";
 import { t } from "@/lib/i18n";
+import { site } from "@/lib/site";
 import { CalendlyEmbed } from "./CalendlyEmbed";
+
+function InstagramIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
 
 export function Hero({ lang }: { lang: Lang }) {
   const reduce = useReducedMotion();
@@ -50,19 +61,42 @@ export function Hero({ lang }: { lang: Lang }) {
                 {d.ctaFormats}
               </Link>
             </div>
+            <div className="mt-6 flex items-center gap-3">
+              <span className="text-xs uppercase tracking-[0.2em] text-cream/60">{d.socialLabel}</span>
+              <a
+                href={site.instagramIsola}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={d.socialFattoria}
+                title="Fattoria Isola"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/25 text-cream/80 transition hover:border-gold hover:text-gold"
+              >
+                <InstagramIcon />
+              </a>
+              <a
+                href={site.instagramEvents}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={d.socialEvents}
+                title="Isola Events"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/25 text-cream/80 transition hover:border-gold hover:text-gold"
+              >
+                <InstagramIcon />
+              </a>
+            </div>
+            <dl className="mt-8 grid max-w-2xl grid-cols-1 gap-3 text-sm sm:grid-cols-3 sm:gap-4">
+              {d.stats.map(([v, l]) => (
+                <div key={l} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <dt className="font-display text-2xl text-gold">{v}</dt>
+                  <dd className="text-cream/70">{l}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
           <div id="prenota" className="min-h-[560px] scroll-mt-24 lg:min-h-0">
             <CalendlyEmbed lang={lang} />
           </div>
         </div>
-        <dl className="mt-10 grid max-w-3xl grid-cols-1 gap-3 text-sm sm:grid-cols-3 sm:gap-4">
-          {d.stats.map(([v, l]) => (
-            <div key={l} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <dt className="font-display text-2xl text-gold">{v}</dt>
-              <dd className="text-cream/70">{l}</dd>
-            </div>
-          ))}
-        </dl>
       </motion.div>
     </section>
   );

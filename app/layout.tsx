@@ -12,7 +12,7 @@ const display = Fraunces({ variable: "--font-display", subsets: ["latin"] });
 const sans = Inter({ variable: "--font-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Isola Events — Eventi premium in Toscana | Fattoria Isola",
+  title: "Eventi DBYoung — Eventi premium in Toscana | Fattoria Isola",
   description:
     "Eventi firmati Dimitri Bouterline (DBYoung) o organizzati da te in Fattoria Isola, Laterina: villa seicentesca, piscina, parco e cappella. Premium, su misura. / Events curated by Dimitri Bouterline or hosted by you.",
   metadataBase: new URL("https://events.dbyoung.it"),
@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     apple: "/logo/events.dbyoung.it.jpg",
   },
   openGraph: {
-    title: "Isola Events · Fattoria Isola",
+    title: "Eventi DBYoung · Fattoria Isola",
     description: "Jazz, blues, classica e moderna con strumenti veri — oppure la tua festa nella tenuta toscana.",
     url: "https://events.dbyoung.it",
-    siteName: "Isola Events",
+    siteName: "Eventi DBYoung",
     locale: "it_IT",
     alternateLocale: ["en_US"],
     type: "website",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Isola Events · Fattoria Isola",
+    title: "Eventi DBYoung · Fattoria Isola",
     description: "Eventi premium senza pensieri in Toscana — prenota la call gratuita.",
     images: ["/logo/events.dbyoung.it.jpg"],
   },

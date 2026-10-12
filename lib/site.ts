@@ -1,11 +1,11 @@
 import type { Lang } from "./i18n";
 
 export const site = {
-  name: "Isola Events",
+  name: "Eventi DBYoung",
   byline: "di Dimitri Bouterline · DBYoung",
   domain: "events.dbyoung.it",
   location: "Fattoria Isola · Via Vecchia Aretina 70, 52020 Laterina (AR) · Toscana",
-  emailFrom: process.env.RESEND_FROM ?? "Isola Events <contact@dbyoung.it>",
+  emailFrom: process.env.RESEND_FROM ?? "Eventi DBYoung <contact@dbyoung.it>",
   emailTo: process.env.BOOKING_TO ?? "contact@dbyoung.it",
   calendlyUrl:
     process.env.NEXT_PUBLIC_CALENDLY_URL ??
@@ -51,7 +51,7 @@ export const events: SiteEvent[] = [
     slug: "serata-jazz-blues-sotto-le-stelle",
     kind: "dimitri",
     title: "Serata Jazz & Blues sotto le stelle",
-    tagline: "Isola Events presenta · a bordo piscina",
+    tagline: "Eventi DBYoung presenta · a bordo piscina",
     description:
       "Il format firmato Dimitri Bouterline: quartetto jazz-blues con strumenti veri, cena toscana a bordo piscina 7×14 e parco secolare illuminato. Direzione artistica, band e produzione curate da DBYoung.",
     image: "/location/piscina-sera.jpg",
@@ -66,7 +66,7 @@ export const events: SiteEvent[] = [
     ],
     en: {
       title: "Jazz & Blues Night Under the Stars",
-      tagline: "Isola Events presents · poolside",
+      tagline: "Eventi DBYoung presents · poolside",
       description:
         "Dimitri Bouterline's signature format: a live jazz-blues quartet with real instruments, Tuscan dinner by the 7×14 pool and the illuminated centuries-old park. Artistic direction, band and production by DBYoung.",
       capacity: "80–150 guests",
@@ -83,7 +83,7 @@ export const events: SiteEvent[] = [
     slug: "classica-in-villa",
     kind: "dimitri",
     title: "Classica in Villa",
-    tagline: "Isola Events presenta · villa seicentesca",
+    tagline: "Eventi DBYoung presenta · villa seicentesca",
     description:
       "Piano, archi e fiati nella villa seicentesca già del Granduca di Toscana, con la cappella privata per cerimonie. Il ponte di DBYoung tra tradizione classica e suono moderno.",
     image: "/location/villa-parco.jpg",
@@ -98,7 +98,7 @@ export const events: SiteEvent[] = [
     ],
     en: {
       title: "Classical Music in the Villa",
-      tagline: "Isola Events presents · 17th-century villa",
+      tagline: "Eventi DBYoung presents · 17th-century villa",
       description:
         "Piano, strings and winds in the 17th-century villa once owned by the Grand Duke of Tuscany, with the private chapel for ceremonies. DBYoung's bridge between classical tradition and modern sound.",
       capacity: "60–120 guests",
@@ -126,7 +126,7 @@ export const events: SiteEvent[] = [
       "Cappella privata + parco + piscina + barbecue",
       "5 appartamenti: Colombaia, Mulino, Fattoria, Officina, Falegnameria",
       "Spazi esterni privati con tavolo e sedie per ogni unità",
-      "Supporto logistico Isola Events se lo vuoi",
+      "Supporto logistico Eventi DBYoung se lo vuoi",
     ],
     en: {
       title: "Your Tuscan Wedding",
@@ -139,7 +139,7 @@ export const events: SiteEvent[] = [
         "Private chapel + park + pool + barbecue",
         "5 apartments: Colombaia, Mulino, Fattoria, Officina, Falegnameria",
         "Private outdoor spaces with table and chairs for each unit",
-        "Isola Events logistics support if you want it",
+        "Eventi DBYoung logistics support if you want it",
       ],
     },
   },

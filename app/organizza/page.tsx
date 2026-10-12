@@ -7,7 +7,7 @@ const CalendlyEmbed = nextDynamic(() => import("@/components/CalendlyEmbed").the
   loading: () => <div className="h-96 animate-pulse rounded-3xl bg-white/5" />,
 });
 
-export const metadata = { title: "Organizza — Isola Events" };
+export const metadata = { title: "Organizza — Eventi DBYoung" };
 
 export default async function OrganizzaPage() {
   const lang = await getLang();

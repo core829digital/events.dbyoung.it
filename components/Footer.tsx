@@ -19,7 +19,7 @@ export function Footer({ lang }: { lang: Lang }) {
               loading="lazy"
               className="h-14 w-14 rounded-full border border-gold/40 object-cover"
             />
-            <p className="font-display text-xl text-cream">Isola Events</p>
+            <p className="font-display text-xl text-cream">Eventi DBYoung</p>
           </div>
           <p className="mt-2 text-sm">{site.byline}</p>
           <p className="mt-2 text-sm">{site.location}</p>
@@ -43,7 +43,7 @@ export function Footer({ lang }: { lang: Lang }) {
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-cream/50">
-        © 2026 Isola Events · Dimitri Bouterline · {d.footer.rights}
+        © 2026 Eventi DBYoung · Dimitri Bouterline · {d.footer.rights}
       </div>
     </footer>
   );

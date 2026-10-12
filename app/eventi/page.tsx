@@ -4,7 +4,7 @@ import { getLang } from "@/lib/lang-server";
 import { t } from "@/lib/i18n";
 
 
-export const metadata = { title: "Eventi — Isola Events" };
+export const metadata = { title: "Eventi — Eventi DBYoung" };
 
 export default async function EventiPage() {
   const lang = await getLang();
