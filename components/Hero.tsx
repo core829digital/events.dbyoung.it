@@ -78,7 +78,7 @@ export function Hero({ lang }: { lang: Lang }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={d.socialEvents}
-                title="Isola Events"
+                title="Eventi DBYoung"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/25 text-cream/80 transition hover:border-gold hover:text-gold"
               >
                 <InstagramIcon />

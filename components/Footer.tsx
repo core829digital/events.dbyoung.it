@@ -31,6 +31,9 @@ export function Footer({ lang }: { lang: Lang }) {
             <li><Link className="hover:text-gold" href="/location">{d.footer.venue}</Link></li>
             <li><Link className="hover:text-gold" href="/organizza">{d.footer.book}</Link></li>
             <li><Link className="hover:text-gold" href="/privacy">{d.footer.privacy}</Link></li>
+            <li><Link className="hover:text-gold" href="/termini">{d.footer.termini}</Link></li>
+            <li><Link className="hover:text-gold" href="/cookie">{d.footer.cookie}</Link></li>
+            <li><Link className="hover:text-gold" href="/gdpr">{d.footer.gdpr}</Link></li>
           </ul>
         </div>
         <div className="text-sm">

@@ -30,7 +30,7 @@
 
 ## 2. Prodotto — i 2 tipi di evento
 
-- [ ] Tipo A — Eventi organizzati DA Dimitri (Isola Events presenta: jazz/blues/classica/moderna, club/festival/privati, direzione artistica + band + produzione)
+- [ ] Tipo A — Eventi organizzati DA Dimitri (Eventi DBYoung presenta: jazz/blues/classica/moderna, club/festival/privati, direzione artistica + band + produzione)
 - [ ] Tipo B — Eventi organizzati DA TERZI in location (matrimoni, privati, corporate, shooting, retreat; affitto spazi + servizi + pernottamento 26 posti)
 - [x] Positioning: nessun prezzo pubblico — ogni CTA porta alla call Calendly (decisione cliente 12-10-2026)
 - [ ] Gallery "Vedi la location con i tuoi occhi" ispirata a Fattoria Isola (parco, piscina, villa, cappella, appartamenti, cavalli)
@@ -44,6 +44,7 @@
 - [ ] Pagine: `/` `/eventi` `/eventi/[slug]` `/location` `/organizza` `/grazie` `/privacy` `/api/send`
 - [ ] Componenti 21st.dev-style: hero cinematico, marquee, card eventi, galleria lightbox, CTA call, FAQ, footer
 - [x] Contatto unico `contact@dbyoung.it` (mittente + destinatario Resend, footer, errori form)
+- [x] Pagine legali identiche a dbyoung.it: `/privacy` `/termini` `/cookie` `/gdpr` (summary EN + testo vincolante IT, link nel footer)
 - [ ] Embed Calendly (call 30min gratis) con fallback link diretto
 - [ ] `convex/schema.ts`: `events`, `bookings`, `gallery`, `testimonials` + seed eventi demo
 - [ ] README con setup `.env` (`CONVEX_DEPLOYMENT`, `NEXT_PUBLIC_CONVEX_URL`, `RESEND_API_KEY`, `NEXT_PUBLIC_CALENDLY_URL`)
@@ -51,7 +52,7 @@
 ## 4. Integrazioni & Deploy
 
 - [ ] Convex: `npx convex dev` + `npx convex deploy`, seed dati
-- [ ] Resend: dominio `events.dbyoung.it` verificato, mittente `Isola Events <contact@dbyoung.it>`, template IT/EN
+- [ ] Resend: dominio `events.dbyoung.it` verificato, mittente `Eventi DBYoung <contact@dbyoung.it>`, template IT/EN
 - [ ] Calendly: URL reale cliente in `.env` + embed testato (no cookie-wall bloccante)
 - [ ] GitHub: repo `events.dbyoung.it`, branch `main`, commit atomici
 - [ ] Vercel: progetto collegato a GitHub, env vars, dominio `events.dbyoung.it`, test auto-deploy
