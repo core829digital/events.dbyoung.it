@@ -20,8 +20,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Isola Events · Fattoria Isola",
     description: "Jazz, blues, classica e moderna con strumenti veri — oppure la tua festa nella tenuta toscana.",
+    url: "https://events.dbyoung.it",
+    siteName: "Isola Events",
+    locale: "it_IT",
     type: "website",
     images: [{ url: "/logo/events.dbyoung.it.jpg", width: 1024, height: 1024, alt: "DBYoung Events — Fattoria Isola" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Isola Events · Fattoria Isola",
+    description: "Eventi premium senza pensieri in Toscana — prenota la call gratuita.",
+    images: ["/logo/events.dbyoung.it.jpg"],
   },
 };
 
