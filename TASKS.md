@@ -14,7 +14,7 @@
     3. Workaround immediato: usare `npm.cmd` / `npx.cmd`
 - [x] Fix PowerShell ExecutionPolicy `CurrentUser → RemoteSigned` OK
 - [x] Riavvio non necessario: PATH refresh OK, `npm`/`npx` funzionano in PowerShell (RemoteSigned). Riverifica finale con nuovo terminale consigliata
-- [x] `git init` + commit iniziale OK (`992a8d0`). Restano: creare repo su GitHub, `git remote add origin`, push, import su Vercel
+- [x] `git init` + commit + push su GitHub OK (`https://github.com/core829digital/events.dbyoung.it.git`, branch `main`). Resta: import su Vercel + auto-deploy
 
 ## 1. Analisi (precisione atomica) — DONE
 
