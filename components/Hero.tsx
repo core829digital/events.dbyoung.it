@@ -27,10 +27,10 @@ export function Hero({ lang }: { lang: Lang }) {
         initial={reduce ? false : { opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="relative m-auto w-full px-4 py-20 sm:px-6 sm:py-24 lg:px-10"
+        className="relative mx-auto mb-auto mt-14 w-full px-4 pb-16 sm:mt-20 sm:px-6 lg:px-10"
       >
-        <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_1fr]">
-          <div className="pt-2 lg:pt-6">
+        <div className="grid items-stretch gap-10 lg:grid-cols-[1.05fr_1fr]">
+          <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-ink/60 px-4 py-1.5 text-[11px] uppercase tracking-[0.25em] text-gold sm:text-xs">
               {d.badge}
             </p>
@@ -51,8 +51,8 @@ export function Hero({ lang }: { lang: Lang }) {
               </Link>
             </div>
           </div>
-          <div id="prenota" className="min-h-[560px] scroll-mt-24 lg:h-[620px]">
-            <CalendlyEmbed lang={lang} height="h-full min-h-[560px]" />
+          <div id="prenota" className="min-h-[560px] scroll-mt-24 lg:min-h-0">
+            <CalendlyEmbed lang={lang} />
           </div>
         </div>
         <dl className="mt-10 grid max-w-3xl grid-cols-1 gap-3 text-sm sm:grid-cols-3 sm:gap-4">
