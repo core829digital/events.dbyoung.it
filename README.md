@@ -15,12 +15,12 @@ npm run dev                  # http://localhost:3000
 npm run build                # verifica produzione
 ```
 
-Foto originali del cliente in `public/location/` (vedi `public/location/README.md`).
-Senza originali, la gallery usa fallback pubblici da fattoriaisola.com (solo dev).
+Le foto in `public/location/` sono le foto originali della tenuta (vedi `public/location/README.md`).
+Ogni immagine ha un fallback remoto di sicurezza in `lib/site.ts`, usato solo se il file locale manca.
 
 ## Integrazioni
 
 - **Convex**: `npx convex dev` (login richiesto) genera `convex/_generated/`, poi togliere `"convex"` da `exclude` in `tsconfig.json` e fare deploy. Schema: `events`, `bookings`, `gallery`.
 - **Resend**: verifica `events.dbyoung.it`, `RESEND_API_KEY`, `RESEND_FROM=Isola Events <eventi@dbyoung.it>`, `BOOKING_TO=booking@dbyoung.it`. Senza key, `/api/send` logga e risponde ok (dev).
-- **Calendly**: `NEXT_PUBLIC_CALENDLY_URL` (placeholder attivo finché non lo imposti).
+- **Calendly**: `NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/core829/dbyoung-events` (già in `.env.local`; riportarlo nelle env Vercel).
 - **Deploy**: push su GitHub → import su Vercel → env vars → dominio `events.dbyoung.it`.

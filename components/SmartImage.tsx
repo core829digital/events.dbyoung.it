@@ -4,9 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 
 /**
- * Immagine con lazy loading, effetto blur-up e fallback automatico:
- * se `src` (originale in public/location/) non esiste ancora,
- * passa a `fallback` (foto pubblica fattoriaisola.com).
+ * Immagine con lazy loading, effetto blur-up e fallback di sicurezza:
+ * se `src` non è disponibile, passa a `fallback`.
  */
 export function SmartImage({
   src,

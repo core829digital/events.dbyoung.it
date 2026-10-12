@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { events } from "@/lib/site";
+import { events, localizeEvent } from "@/lib/site";
+import { getLang } from "@/lib/lang-server";
+import { t } from "@/lib/i18n";
+
 import { SmartImage } from "@/components/SmartImage";
 
 export function generateStaticParams() {
@@ -9,8 +12,11 @@ export function generateStaticParams() {
 
 export default async function EventDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const ev = events.find((e) => e.slug === slug);
-  if (!ev) notFound();
+  const lang = await getLang();
+  const d = t(lang).eventDetail;
+  const raw = events.find((e) => e.slug === slug);
+  if (!raw) notFound();
+  const ev = localizeEvent(raw, lang);
   return (
     <article className="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
       <p className="text-xs uppercase tracking-[0.25em] text-gold">{ev.tagline}</p>
@@ -24,8 +30,8 @@ export default async function EventDetail({ params }: { params: Promise<{ slug: 
       </ul>
       <p className="mt-6 text-cream/70">{ev.capacity} · {ev.music}</p>
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/organizza" className="rounded-full bg-gold px-6 py-3 font-semibold text-ink hover:bg-cream">Prenota la call gratuita →</Link>
-        <Link href="/eventi" className="rounded-full border border-cream/25 px-6 py-3 hover:border-gold hover:text-gold">← Tutti gli eventi</Link>
+        <Link href="/organizza" className="rounded-full bg-gold px-6 py-3 font-semibold text-ink hover:bg-cream">{d.cta}</Link>
+        <Link href="/eventi" className="rounded-full border border-cream/25 px-6 py-3 hover:border-gold hover:text-gold">{d.back}</Link>
       </div>
     </article>
   );

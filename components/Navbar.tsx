@@ -4,15 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import type { Lang } from "@/lib/i18n";
+import { t } from "@/lib/i18n";
+import { LangToggle } from "./LangToggle";
 
-const links = [
-  { href: "/eventi", label: "Eventi" },
-  { href: "/location", label: "Location" },
-  { href: "/organizza", label: "Preventivo" },
-];
-
-export function Navbar() {
+export function Navbar({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
+  const d = t(lang).nav;
+  const links = [
+    { href: "/eventi", label: d.events },
+    { href: "/location", label: d.location },
+    { href: "/organizza", label: d.quote },
+  ];
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur">
       <div className="flex w-full items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-10">
@@ -34,27 +37,29 @@ export function Navbar() {
             </span>
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm text-cream/85 md:flex">
+        <nav className="hidden items-center gap-4 text-sm text-cream/85 md:flex">
           {links.map((l) => (
             <Link key={l.href} className="hover:text-gold" href={l.href}>{l.label}</Link>
           ))}
+          <LangToggle lang={lang} />
           <Link
             href="/organizza"
             className="rounded-full bg-gold px-5 py-2.5 font-semibold text-ink transition hover:bg-cream"
           >
-            Organizza
+            {d.book}
           </Link>
         </nav>
         <div className="flex items-center gap-2 md:hidden">
+          <LangToggle lang={lang} />
           <Link
             href="/organizza"
             className="rounded-full bg-gold px-4 py-2 text-sm font-semibold text-ink"
           >
-            Organizza
+            {d.book}
           </Link>
           <button
             type="button"
-            aria-label={open ? "Chiudi menu" : "Apri menu"}
+            aria-label={open ? d.menuClose : d.menuOpen}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
             className="rounded-full border border-cream/25 p-2 text-cream"
@@ -66,7 +71,7 @@ export function Navbar() {
       {open && (
         <nav className="border-t border-white/10 px-4 py-3 md:hidden">
           <ul className="space-y-1 text-base">
-            {[{ href: "/", label: "Home" }, ...links].map((l) => (
+            {[{ href: "/", label: d.home }, ...links].map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}

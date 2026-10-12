@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import type { Lang } from "@/lib/i18n";
+import { t } from "@/lib/i18n";
 
-export function Footer() {
+export function Footer({ lang }: { lang: Lang }) {
+  const d = t(lang);
   return (
     <footer className="border-t border-white/10 bg-ink text-cream/75">
       <div className="grid w-full gap-8 px-4 py-12 sm:grid-cols-2 sm:px-6 sm:py-14 lg:grid-cols-3 lg:px-10">
@@ -22,16 +25,16 @@ export function Footer() {
           <p className="mt-2 text-sm">{site.location}</p>
         </div>
         <div className="text-sm">
-          <p className="uppercase tracking-[0.2em] text-cream/50">Esplora</p>
+          <p className="uppercase tracking-[0.2em] text-cream/50">{d.footer.explore}</p>
           <ul className="mt-3 space-y-2">
-            <li><Link className="hover:text-gold" href="/eventi">I due format</Link></li>
-            <li><Link className="hover:text-gold" href="/location">La location</Link></li>
-            <li><Link className="hover:text-gold" href="/organizza">Organizza / Preventivo</Link></li>
-            <li><Link className="hover:text-gold" href="/privacy">Privacy</Link></li>
+            <li><Link className="hover:text-gold" href="/eventi">{d.footer.formats}</Link></li>
+            <li><Link className="hover:text-gold" href="/location">{d.footer.venue}</Link></li>
+            <li><Link className="hover:text-gold" href="/organizza">{d.footer.book}</Link></li>
+            <li><Link className="hover:text-gold" href="/privacy">{d.footer.privacy}</Link></li>
           </ul>
         </div>
         <div className="text-sm">
-          <p className="uppercase tracking-[0.2em] text-cream/50">Contatti</p>
+          <p className="uppercase tracking-[0.2em] text-cream/50">{d.footer.contacts}</p>
           <ul className="mt-3 space-y-2">
             <li><a className="hover:text-gold" href={`mailto:${site.emailTo}`}>{site.emailTo}</a></li>
             <li><a className="hover:text-gold" href={site.mainSite}>dbyoung.it</a></li>
@@ -40,7 +43,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-cream/50">
-        © 2026 Isola Events · Dimitri Bouterline · Tutti i diritti riservati.
+        © 2026 Isola Events · Dimitri Bouterline · {d.footer.rights}
       </div>
     </footer>
   );

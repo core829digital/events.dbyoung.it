@@ -1,10 +1,13 @@
 import Link from "next/link";
-import { events, type EventKind } from "@/lib/site";
+import { events, localizeEvent, type EventKind } from "@/lib/site";
+import type { Lang } from "@/lib/i18n";
+import { t } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 import { SmartImage } from "./SmartImage";
 
-export function EventCards({ filter }: { filter?: EventKind }) {
-  const list = filter ? events.filter((e) => e.kind === filter) : events;
+export function EventCards({ filter, lang }: { filter?: EventKind; lang: Lang }) {
+  const d = t(lang).cards;
+  const list = (filter ? events.filter((e) => e.kind === filter) : events).map((e) => localizeEvent(e, lang));
   return (
     <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
       {list.map((e, i) => (
@@ -19,7 +22,7 @@ export function EventCards({ filter }: { filter?: EventKind }) {
                 className="object-cover transition duration-700 group-hover:scale-105"
               />
               <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs uppercase tracking-widest text-gold">
-                {e.kind === "dimitri" ? "Firmato Dimitri" : "Organizza tu"}
+                {e.kind === "dimitri" ? d.byDimitri : d.byYou}
               </span>
             </div>
             <div className="p-6">
@@ -29,10 +32,10 @@ export function EventCards({ filter }: { filter?: EventKind }) {
               <p className="mt-3 text-sm text-cream/60">{e.capacity} · {e.music}</p>
               <div className="mt-4 flex flex-wrap items-center gap-4">
                 <Link href="/organizza" className="rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink hover:bg-cream">
-                  Prenota la call
+                  {d.bookCall}
                 </Link>
                 <Link href={`/eventi/${e.slug}`} className="text-sm font-semibold text-cream underline decoration-gold decoration-2 underline-offset-4 hover:text-gold">
-                  Dettagli →
+                  {d.details}
                 </Link>
               </div>
             </div>

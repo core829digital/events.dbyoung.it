@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { events } from "@/lib/site";
+import { events, localizeEvent } from "@/lib/site";
+import type { Lang } from "@/lib/i18n";
+import { t } from "@/lib/i18n";
 import { quoteSchema } from "@/lib/validators";
 
-export function QuoteForm() {
+export function QuoteForm({ lang }: { lang: Lang }) {
   const router = useRouter();
+  const d = t(lang).form;
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [kind, setKind] = useState<"dimitri" | "terzi">("dimitri");
@@ -25,10 +28,11 @@ export function QuoteForm() {
       eventSlug: String(fd.get("eventSlug") ?? ""),
       message: String(fd.get("message") ?? ""),
       privacy: fd.get("privacy") === "on",
+      lang,
     };
-    const parsed = quoteSchema.safeParse(raw);
+    const parsed = quoteSchema(lang).safeParse(raw);
     if (!parsed.success) {
-      setError(parsed.error.issues[0]?.message ?? "Controlla i campi");
+      setError(parsed.error.issues[0]?.message ?? "Error");
       return;
     }
     setSending(true);
@@ -38,10 +42,10 @@ export function QuoteForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(parsed.data),
       });
-      if (!res.ok) throw new Error("Invio non riuscito, riprova o scrivi a booking@dbyoung.it");
+      if (!res.ok) throw new Error(d.sendError);
       router.push("/grazie");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Errore di invio");
+      setError(err instanceof Error ? err.message : d.sendError);
     } finally {
       setSending(false);
     }
@@ -57,35 +61,36 @@ export function QuoteForm() {
             onClick={() => setKind(k)}
             className={`rounded-full py-2.5 font-semibold ${kind === k ? "bg-gold text-ink" : "text-cream/70 hover:text-cream"}`}
           >
-            {k === "dimitri" ? "Evento firmato Dimitri" : "Organizzo io in location"}
+            {k === "dimitri" ? d.kindDimitri : d.kindTerzi}
           </button>
         ))}
       </div>
 
       <div className="mt-5 grid gap-4 sm:grid-cols-2">
-        <label className="text-sm">Nome e cognome<input name="name" required className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none ring-gold/40 focus:ring-2" placeholder="Maria Rossi" /></label>
-        <label className="text-sm">Email<input name="email" type="email" required className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40" placeholder="maria@email.it" /></label>
-        <label className="text-sm">Telefono<input name="phone" required className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40" placeholder="+39 ..." /></label>
-        <label className="text-sm">Data desiderata<input name="date" type="date" required className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40" /></label>
-        <label className="text-sm">Ospiti<input name="guests" type="number" min={2} max={500} defaultValue={60} required className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40" /></label>
-        <label className="text-sm">Format
+        <label className="text-sm">{d.name}<input name="name" required className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none ring-gold/40 focus:ring-2" placeholder={d.namePh} /></label>
+        <label className="text-sm">{d.email}<input name="email" type="email" required className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40" placeholder={d.emailPh} /></label>
+        <label className="text-sm">{d.phone}<input name="phone" required className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40" placeholder={d.phonePh} /></label>
+        <label className="text-sm">{d.date}<input name="date" type="date" required className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40" /></label>
+        <label className="text-sm">{d.guests}<input name="guests" type="number" min={2} max={500} defaultValue={60} required className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40" /></label>
+        <label className="text-sm">{d.format}
           <select name="eventSlug" className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40">
-            <option value="">Da definire in call</option>
-            {events.filter((ev) => ev.kind === kind).map((ev) => (
-              <option key={ev.slug} value={ev.slug}>{ev.title}</option>
-            ))}
+            <option value="">{d.undecided}</option>
+            {events.filter((ev) => ev.kind === kind).map((ev) => {
+              const l = localizeEvent(ev, lang);
+              return <option key={ev.slug} value={ev.slug}>{l.title}</option>;
+            })}
           </select>
         </label>
       </div>
-      <label className="mt-4 block text-sm">La tua idea<textarea name="message" required minLength={10} rows={4} className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40" placeholder="Matrimonio di 80 persone a giugno, rito in cappella, cena a bordo piscina..." /></label>
+      <label className="mt-4 block text-sm">{d.message}<textarea name="message" required minLength={10} rows={4} className="mt-1 w-full rounded-xl bg-ink px-3 py-2.5 text-cream outline-none focus:ring-2 focus:ring-gold/40" placeholder={d.messagePh} /></label>
       <label className="mt-4 flex items-start gap-2 text-xs text-cream/70">
-        <input name="privacy" type="checkbox" className="mt-0.5" /> Ho letto e accetto la <a href="/privacy" className="underline">Privacy Policy</a>.
+        <input name="privacy" type="checkbox" className="mt-0.5" /> {d.privacy} <a href="/privacy" className="underline">{d.privacyLink}</a>.
       </label>
       {error ? <p className="mt-3 text-sm text-red-300">{error}</p> : null}
       <button disabled={sending} className="mt-5 w-full rounded-full bg-gold py-3 font-semibold text-ink hover:bg-cream disabled:opacity-60">
-        {sending ? "Invio..." : "Invia la richiesta →"}
+        {sending ? d.sending : d.submit}
       </button>
-      <p className="mt-2 text-center text-xs text-cream/50">Risposta entro 24–48h · oppure prenota subito la call qui sotto</p>
+      <p className="mt-2 text-center text-xs text-cream/50">{d.note}</p>
     </form>
   );
 }

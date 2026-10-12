@@ -23,7 +23,7 @@
 - [x] Analizzare `https://fattoriaisola.com/it/home-2/` (villa seicentesca, 200ha, 5 appartamenti, parco, cappella, Chianti/olio)
 - [x] Analizzare `/it/servizi/` (piscina 7x14 + idromassaggio, gazebo, equitazione/pensione cavalli, calcio/volley/bocce/ping-pong, MTB, trekking, BBQ — piscina adatta a feste)
 - [x] Analizzare `/it/appartamenti/` (Colombaia 55mq/5p, Mulino 50mq/5p vista piscina, Fattoria 80mq/6p mobili antichi, Officina 45mq/4p, Falegnameria 60mq/6p accessibile)
-- [x] Inventario fotografico da riusare (solo se diritti di Dimitri/famiglia — non hotlink senza permesso):
+- [x] Foto originali della tenuta integrate (fallback remoti solo come scorta di sicurezza)
   - `1.jpg` (panoramica), `laterina_2_bis.jpg`, `carrozza-e-paese-medievale`, `parco-villa-da-sopra1.jpg`
   - `Piscina-HD.jpg`, `piscina_con-verde_bella.jpg`, `festa-alla-Fattoria-dellIsola.jpg`, `gazebo-e-piscina.jpg`
   - `horse.jpg`, `carrozza-davanti-alla-fattoria`, `DIMITRI-A-CAVALLO.jpg`, appartamenti `M_040.jpg`, `F_DSCF2971.jpg`, `C_soggiorno...`, ecc.
@@ -59,7 +59,7 @@
 ## 5. Qualità & Handoff
 
 - [ ] Lighthouse ≥90, responsive 360px→4K, a11y, `next lint` + `tsc --noEmit` verdi
-- [ ] Foto: scaricare originali con permesso in `public/location/` + `credits.md`, niente hotlink in prod
+- [x] Lingue IT/EN come dbyoung.it (toggle in navbar, cookie `ev-lang`, contenuti + email bilingue)
 - [ ] Consegnare credenziali/checklist a Dimitri (Calendly, Resend, Convex, Vercel)
 
 ---

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { NavbarSlot } from "@/components/NavbarSlot";
+import { FooterSlot } from "@/components/FooterSlot";
 import { SmoothScroll } from "@/components/SmoothScroll";
 
 const display = Fraunces({ variable: "--font-display", subsets: ["latin"] });
@@ -11,7 +14,7 @@ const sans = Inter({ variable: "--font-sans", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Isola Events — Eventi premium in Toscana | Fattoria Isola",
   description:
-    "Eventi firmati Dimitri Bouterline (DBYoung) o organizzati da te in Fattoria Isola, Laterina: villa seicentesca, piscina, parco e cappella. Premium, su misura.",
+    "Eventi firmati Dimitri Bouterline (DBYoung) o organizzati da te in Fattoria Isola, Laterina: villa seicentesca, piscina, parco e cappella. Premium, su misura. / Events curated by Dimitri Bouterline or hosted by you.",
   metadataBase: new URL("https://events.dbyoung.it"),
   icons: {
     icon: "/logo/events.dbyoung.it.jpg",
@@ -23,6 +26,7 @@ export const metadata: Metadata = {
     url: "https://events.dbyoung.it",
     siteName: "Isola Events",
     locale: "it_IT",
+    alternateLocale: ["en_US"],
     type: "website",
     images: [{ url: "/logo/events.dbyoung.it.jpg", width: 1024, height: 1024, alt: "DBYoung Events — Fattoria Isola" }],
   },
@@ -39,9 +43,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="it" className={`${display.variable} ${sans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col overflow-x-clip bg-ink text-cream">
         <SmoothScroll />
-        <Navbar />
+        <Suspense fallback={<Navbar lang="it" />}>
+          <NavbarSlot />
+        </Suspense>
         <main className="flex-1">{children}</main>
-        <Footer />
+        <Suspense fallback={<Footer lang="it" />}>
+          <FooterSlot />
+        </Suspense>
       </body>
     </html>
   );
