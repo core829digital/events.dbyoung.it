@@ -28,7 +28,6 @@ export interface SiteEvent {
   imageFallback: string;
   capacity: string;
   music: string;
-  priceFrom: string;
   highlights: string[];
 }
 
@@ -49,7 +48,6 @@ export const events: SiteEvent[] = [
     imageFallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/festa-alla-Fattoria-dellIsola-1024x576.jpg",
     capacity: "80–150 ospiti",
     music: "Jazz · Blues · Soul con strumenti veri",
-    priceFrom: "da €39 / ospite",
     highlights: [
       "Band dal vivo diretta da Dimitri",
       "Cena toscana + Chianti della tenuta",
@@ -68,7 +66,6 @@ export const events: SiteEvent[] = [
     imageFallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/parco-villa-da-sopra1.jpg",
     capacity: "60–120 ospiti",
     music: "Classica · Crossover moderno",
-    priceFrom: "da €45 / ospite",
     highlights: [
       "Concerto nella villa + aperitivo nel parco",
       "Cappella consacrata per riti e benedizioni di maggio",
@@ -87,7 +84,6 @@ export const events: SiteEvent[] = [
     imageFallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/Cappella-765x1024.jpg",
     capacity: "fino a 150 ospiti · 26 posti letto",
     music: "La tua musica — service e palco disponibili",
-    priceFrom: "location da €1.900 / giorno",
     highlights: [
       "Cappella privata + parco + piscina + barbecue",
       "5 appartamenti: Colombaia, Mulino, Fattoria, Officina, Falegnameria",
@@ -106,7 +102,6 @@ export const events: SiteEvent[] = [
     imageFallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/cavalli-1024x576.jpg",
     capacity: "10–80 ospiti",
     music: "Silenzio della campagna + live su richiesta",
-    priceFrom: "location da €900 / giorno",
     highlights: [
       "Piscina con idromassaggio (30.05–30.09)",
       "Attività: bici, cavalli, sport, trekking",
@@ -151,29 +146,4 @@ export const gallery: GalleryItem[] = [
   { src: "/location/cavalli.jpg", alt: "Cavalli della tenuta", credit: "Fattoria Isola", fallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/cavalli-1024x576.jpg" },
   { src: "/location/cappella.jpg", alt: "Cappella privata", credit: "Fattoria Isola", fallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/Cappella-765x1024.jpg" },
   { src: "/location/appartamenti.jpg", alt: "Interni in stile toscano", credit: "Fattoria Isola", fallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/C_soggiorno-con-tavolo-colombaia-tipo-b-1024x576.jpg" },
-];
-
-export const pricing = [
-  {
-    name: "Essenziale",
-    price: "da €39 / ospite",
-    for: "Per assaggiare Isola senza pensieri",
-    features: ["Aperitivo o cena semplice a bordo piscina", "Playlist/live essenziale DBYoung", "Allestimento base gazebo e luci", "Staff accoglienza"],
-    cta: "Richiedi disponibilità",
-  },
-  {
-    name: "Sartoriale",
-    price: "da €79 / ospite",
-    for: "Il signature: elegante, memorabile",
-    features: ["Band dal vivo + direzione artistica Dimitri", "Cena toscana + Chianti della tenuta", "Parco illuminato + cappella disponibile", "Foto con cavalli e carrozza"],
-    featured: true,
-    cta: "Prenota la call gratuita",
-  },
-  {
-    name: "Gran Galà / Tua Location",
-    price: "location da €1.900",
-    for: "Matrimoni ed eventi organizzati da te",
-    features: ["Uso esclusivo spazi + 5 appartamenti", "Rito in cappella o nel parco", "I tuoi fornitori, nostro supporto logistico", "Pernottamento 26 ospiti in loco"],
-    cta: "Parliamone in call",
-  },
 ];

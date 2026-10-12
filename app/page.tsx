@@ -8,9 +8,6 @@ import { spaces, site } from "@/lib/site";
 const Gallery = dynamic(() => import("@/components/Gallery").then((m) => m.Gallery), {
   loading: () => <div className="grid grid-cols-2 gap-3 md:grid-cols-4">{Array.from({ length: 8 }).map((_, i) => <div key={i} className="h-44 animate-pulse rounded-2xl bg-white/5 md:h-56" />)}</div>,
 });
-const Pricing = dynamic(() => import("@/components/Pricing").then((m) => m.Pricing), {
-  loading: () => <div className="grid gap-6 md:grid-cols-3">{Array.from({ length: 3 }).map((_, i) => <div key={i} className="h-64 animate-pulse rounded-3xl bg-white/5" />)}</div>,
-});
 
 export default function Home() {
   return (
@@ -50,10 +47,14 @@ export default function Home() {
       </section>
 
       <section className="w-full px-4 sm:px-6 lg:px-10 py-16">
-        <SectionHeading kicker="Prezzi chiari" title="Premium nell'esperienza, accessibile nel prezzo." />
-        <div className="mt-8"><Pricing /></div>
+        <SectionHeading kicker="Il passo successivo" title="Ogni evento è su misura: parliamone in call." sub="Niente listini: raccontaci ospiti, data e idea nella call gratuita da 30 minuti e ricevi la proposta sartoriale." />
+        <div className="mt-8">
+          <Link href="/organizza" className="inline-block rounded-full bg-gold px-8 py-3.5 font-semibold text-ink hover:bg-cream">
+            Prenota la call gratuita →
+          </Link>
+        </div>
         <p className="mt-6 text-sm text-cream/60">
-          DBYoung suona con strumenti veri — jazz, blues, classica e moderna. Dettagli e preventivi su misura in call gratuita. Vedi anche <a className="underline" href={site.mainEvents}>dbyoung.it/eventi</a>.
+          DBYoung suona con strumenti veri — jazz, blues, classica e moderna. Vedi anche <a className="underline" href={site.mainEvents}>dbyoung.it/eventi</a>.
         </p>
       </section>
     </>

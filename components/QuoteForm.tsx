@@ -83,7 +83,7 @@ export function QuoteForm() {
       </label>
       {error ? <p className="mt-3 text-sm text-red-300">{error}</p> : null}
       <button disabled={sending} className="mt-5 w-full rounded-full bg-gold py-3 font-semibold text-ink hover:bg-cream disabled:opacity-60">
-        {sending ? "Invio..." : "Richiedi preventivo →"}
+        {sending ? "Invio..." : "Invia la richiesta →"}
       </button>
       <p className="mt-2 text-center text-xs text-cream/50">Risposta entro 24–48h · oppure prenota subito la call qui sotto</p>
     </form>

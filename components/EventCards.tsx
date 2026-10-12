@@ -26,10 +26,15 @@ export function EventCards({ filter }: { filter?: EventKind }) {
               <p className="text-xs uppercase tracking-[0.2em] text-cream/50">{e.tagline}</p>
               <h3 className="mt-1 font-display text-2xl text-cream">{e.title}</h3>
               <p className="mt-2 text-sm text-cream/70">{e.description}</p>
-              <p className="mt-3 text-sm text-gold">{e.priceFrom} · {e.capacity}</p>
-              <Link href={`/eventi/${e.slug}`} className="mt-4 inline-block text-sm font-semibold text-cream underline decoration-gold decoration-2 underline-offset-4 hover:text-gold">
-                Dettagli →
-              </Link>
+              <p className="mt-3 text-sm text-cream/60">{e.capacity} · {e.music}</p>
+              <div className="mt-4 flex flex-wrap items-center gap-4">
+                <Link href="/organizza" className="rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink hover:bg-cream">
+                  Prenota la call
+                </Link>
+                <Link href={`/eventi/${e.slug}`} className="text-sm font-semibold text-cream underline decoration-gold decoration-2 underline-offset-4 hover:text-gold">
+                  Dettagli →
+                </Link>
+              </div>
             </div>
           </article>
         </Reveal>

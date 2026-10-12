@@ -2,7 +2,7 @@
 
 Portale eventi di **Dimitri Bouterline (DBYoung)** presso **Fattoria Isola, Laterina (AR)**.
 Due format: **1) eventi firmati Dimitri** · **2) eventi organizzati da terzi in location**.
-Positioning: esperienza premium a prezzo accessibile.
+Positioning: esperienza premium su misura — nessun listino pubblico, ogni lead va in call Calendly.
 
 Stack: Next.js 16 + TypeScript + Tailwind v4 · Convex · Resend · Calendly · Vercel.
 

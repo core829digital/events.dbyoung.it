@@ -11,7 +11,7 @@ const sans = Inter({ variable: "--font-sans", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Isola Events — Eventi premium in Toscana | Fattoria Isola",
   description:
-    "Eventi firmati Dimitri Bouterline (DBYoung) o organizzati da te in Fattoria Isola, Laterina: villa seicentesca, piscina, parco e cappella. Premium, a prezzo accessibile.",
+    "Eventi firmati Dimitri Bouterline (DBYoung) o organizzati da te in Fattoria Isola, Laterina: villa seicentesca, piscina, parco e cappella. Premium, su misura.",
   metadataBase: new URL("https://events.dbyoung.it"),
   icons: {
     icon: "/logo/events.dbyoung.it.jpg",

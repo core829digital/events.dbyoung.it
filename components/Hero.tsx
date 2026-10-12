@@ -32,7 +32,7 @@ export function Hero() {
         <h1 className="mt-6 max-w-3xl font-display text-4xl leading-[1.05] sm:text-6xl lg:text-7xl">
           Eventi premium,
           <br />
-          <span className="text-gold">a prezzo accessibile.</span>
+          <span className="text-gold">senza pensieri.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-base text-cream/80 sm:text-lg">
           Villa seicentesca, parco secolare, piscina e cappella privata su 200 ettari.

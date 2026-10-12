@@ -11,7 +11,7 @@ export default defineSchema({
     image: v.string(),
     capacity: v.string(),
     music: v.string(),
-    priceFrom: v.string(),
+    priceFrom: v.optional(v.string()),
     published: v.boolean(),
   }).index("by_slug", ["slug"]),
 

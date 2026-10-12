@@ -16,7 +16,7 @@ export default function OrganizzaPage() {
       <SectionHeading
         kicker="Organizza"
         title="Raccontaci l'idea, al resto pensiamo noi."
-        sub="Due strade: partecipa a un evento firmato Dimitri, oppure organizza il tuo in location. Compila per il preventivo (risposta 24–48h) oppure prenota subito la call gratuita da 30 min."
+        sub="Due strade: partecipa a un evento firmato Dimitri, oppure organizza il tuo in location. Prenota la call gratuita da 30 minuti — oppure lasciaci un messaggio e ti risponderemo entro 24–48h."
       />
       <div className="mt-8 grid gap-8 lg:grid-cols-2">
         <QuoteForm />

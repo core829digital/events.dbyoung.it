@@ -22,9 +22,9 @@ export default async function EventDetail({ params }: { params: Promise<{ slug: 
       <ul className="mt-6 space-y-2 text-cream/80">
         {ev.highlights.map((h) => <li key={h}>✓ {h}</li>)}
       </ul>
-      <p className="mt-6 text-gold">{ev.priceFrom} · {ev.capacity} · {ev.music}</p>
+      <p className="mt-6 text-cream/70">{ev.capacity} · {ev.music}</p>
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/organizza" className="rounded-full bg-gold px-6 py-3 font-semibold text-ink hover:bg-cream">Richiedi per questa data →</Link>
+        <Link href="/organizza" className="rounded-full bg-gold px-6 py-3 font-semibold text-ink hover:bg-cream">Prenota la call gratuita →</Link>
         <Link href="/eventi" className="rounded-full border border-cream/25 px-6 py-3 hover:border-gold hover:text-gold">← Tutti gli eventi</Link>
       </div>
     </article>

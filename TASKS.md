@@ -32,7 +32,7 @@
 
 - [ ] Tipo A — Eventi organizzati DA Dimitri (Isola Events presenta: jazz/blues/classica/moderna, club/festival/privati, direzione artistica + band + produzione)
 - [ ] Tipo B — Eventi organizzati DA TERZI in location (matrimoni, privati, corporate, shooting, retreat; affitto spazi + servizi + pernottamento 26 posti)
-- [ ] Positioning: "premium ma accessibile" → 3 fasce prezzo trasparenti (Essenziale / Sartoriale / Gran Galà) + preventivatore
+- [x] Positioning: nessun prezzo pubblico — ogni CTA porta alla call Calendly (decisione cliente 12-10-2026)
 - [ ] Gallery "Vedi la location con i tuoi occhi" ispirata a Fattoria Isola (parco, piscina, villa, cappella, appartamenti, cavalli)
 
 ## 3. Scaffolding Next.js + TS (in corso)
