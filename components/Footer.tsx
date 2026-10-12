@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
@@ -6,7 +7,17 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-ink text-cream/75">
       <div className="grid w-full gap-8 px-4 py-12 sm:grid-cols-2 sm:px-6 sm:py-14 lg:grid-cols-3 lg:px-10">
         <div>
-          <p className="font-display text-xl text-cream">Isola Events</p>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo/events.dbyoung.it.jpg"
+              alt="DBYoung Events — logo"
+              width={56}
+              height={56}
+              loading="lazy"
+              className="h-14 w-14 rounded-full border border-gold/40 object-cover"
+            />
+            <p className="font-display text-xl text-cream">Isola Events</p>
+          </div>
           <p className="mt-2 text-sm">{site.byline}</p>
           <p className="mt-2 text-sm">{site.location}</p>
         </div>

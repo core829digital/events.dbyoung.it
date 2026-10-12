@@ -13,10 +13,15 @@ export const metadata: Metadata = {
   description:
     "Eventi firmati Dimitri Bouterline (DBYoung) o organizzati da te in Fattoria Isola, Laterina: villa seicentesca, piscina, parco e cappella. Premium, a prezzo accessibile.",
   metadataBase: new URL("https://events.dbyoung.it"),
+  icons: {
+    icon: "/logo/events.dbyoung.it.jpg",
+    apple: "/logo/events.dbyoung.it.jpg",
+  },
   openGraph: {
     title: "Isola Events · Fattoria Isola",
     description: "Jazz, blues, classica e moderna con strumenti veri — oppure la tua festa nella tenuta toscana.",
     type: "website",
+    images: [{ url: "/logo/events.dbyoung.it.jpg", width: 1024, height: 1024, alt: "DBYoung Events — Fattoria Isola" }],
   },
 };
 

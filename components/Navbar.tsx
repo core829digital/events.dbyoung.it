@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -15,12 +16,22 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur">
       <div className="flex w-full items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-10">
-        <Link href="/" className="flex min-w-0 items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="truncate font-display text-xl tracking-tight text-cream sm:text-2xl">
-            Isola <span className="text-gold">Events</span>
-          </span>
-          <span className="hidden text-xs uppercase tracking-[0.2em] text-cream/60 lg:inline">
-            Fattoria Isola
+        <Link href="/" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
+          <Image
+            src="/logo/events.dbyoung.it.jpg"
+            alt="DBYoung Events — logo"
+            width={44}
+            height={44}
+            priority
+            className="h-10 w-10 shrink-0 rounded-full border border-gold/40 object-cover sm:h-11 sm:w-11"
+          />
+          <span className="flex min-w-0 items-baseline gap-2">
+            <span className="truncate font-display text-xl tracking-tight text-cream sm:text-2xl">
+              Isola <span className="text-gold">Events</span>
+            </span>
+            <span className="hidden text-xs uppercase tracking-[0.2em] text-cream/60 lg:inline">
+              Fattoria Isola
+            </span>
           </span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm text-cream/85 md:flex">
