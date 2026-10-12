@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-ink text-cream/75">
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-3">
+      <div className="grid w-full gap-8 px-4 py-12 sm:grid-cols-2 sm:px-6 sm:py-14 lg:grid-cols-3 lg:px-10">
         <div>
           <p className="font-display text-xl text-cream">Isola Events</p>
           <p className="mt-2 text-sm">{site.byline}</p>

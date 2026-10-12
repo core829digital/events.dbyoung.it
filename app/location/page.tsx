@@ -18,7 +18,7 @@ const appartamenti = [
 
 export default function LocationPage() {
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14">
+    <div className="w-full px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
       <SectionHeading
         kicker="Location · Fattoria Isola"
         title="Villa '600, parco, piscina, cappella e 5 appartamenti."

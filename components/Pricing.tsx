@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function Pricing() {
   return (
-    <div className="grid gap-6 md:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
       {pricing.map((p, i) => (
         <Reveal key={p.name} delay={i * 0.08}>
           <div className={`rounded-3xl border p-6 ${p.featured ? "border-gold bg-gold/10" : "border-white/10 bg-white/5"}`}>

@@ -7,7 +7,7 @@ export function Gallery() {
     <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
       {gallery.map((g, i) => (
         <Reveal key={g.src} delay={(i % 4) * 0.06}>
-          <figure className="group relative h-44 overflow-hidden rounded-2xl border border-white/10 bg-ink-soft md:h-56">
+          <figure className="group relative h-40 overflow-hidden rounded-2xl border border-white/10 bg-ink-soft sm:h-48 lg:h-56">
             <SmartImage
               src={g.src}
               fallback={g.fallback}

@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="w-full px-4 sm:px-6 lg:px-10 py-16">
         <SectionHeading
           kicker="I 2 format"
           title={<>Scegli come vivere Isola.</>}
@@ -27,7 +27,7 @@ export default function Home() {
       </section>
 
       <section className="border-y border-white/10 bg-white/[0.02]">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="w-full px-4 sm:px-6 lg:px-10 py-16">
           <SectionHeading kicker="La location" title="Fattoria Isola, un'isola nel centro della Toscana." sub="Villa seicentesca del Granduca, parco con piante rare, cappella privata, 5 appartamenti, piscina 7×14, cavalli e 200 ettari. A 500 m da Laterina, 50 km da Firenze e Siena." />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {spaces.map((s) => (
@@ -44,12 +44,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="w-full px-4 sm:px-6 lg:px-10 py-16">
         <SectionHeading kicker="Gallery" title="Guarda con i tuoi occhi." sub="Foto originali della tenuta in arrivo in public/location/ — anteprima dai collegamenti pubblici di fattoriaisola.com." />
         <div className="mt-8"><Gallery /></div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="w-full px-4 sm:px-6 lg:px-10 py-16">
         <SectionHeading kicker="Prezzi chiari" title="Premium nell'esperienza, accessibile nel prezzo." />
         <div className="mt-8"><Pricing /></div>
         <p className="mt-6 text-sm text-cream/60">

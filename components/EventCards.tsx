@@ -6,7 +6,7 @@ import { SmartImage } from "./SmartImage";
 export function EventCards({ filter }: { filter?: EventKind }) {
   const list = filter ? events.filter((e) => e.kind === filter) : events;
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
       {list.map((e, i) => (
         <Reveal key={e.slug} delay={(i % 2) * 0.08}>
           <article className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-gold/50">

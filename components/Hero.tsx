@@ -24,30 +24,30 @@ export function Hero() {
         initial={reduce ? false : { opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="relative mx-auto max-w-6xl px-5 pb-20 pt-24 sm:pt-32"
+        className="relative w-full px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-28 lg:px-10"
       >
-        <p className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-ink/60 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-gold">
+        <p className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-ink/60 px-4 py-1.5 text-[11px] uppercase tracking-[0.25em] text-gold sm:text-xs">
           Fattoria Isola · Laterina, Toscana
         </p>
-        <h1 className="mt-6 max-w-3xl font-display text-5xl leading-[1.02] sm:text-7xl">
+        <h1 className="mt-6 max-w-3xl font-display text-4xl leading-[1.05] sm:text-6xl lg:text-7xl">
           Eventi premium,
           <br />
           <span className="text-gold">a prezzo accessibile.</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-cream/80">
+        <p className="mt-6 max-w-2xl text-base text-cream/80 sm:text-lg">
           Villa seicentesca, parco secolare, piscina e cappella privata su 200 ettari.
           Partecipa agli eventi firmati Dimitri Bouterline — oppure organizza il tuo,
           con band dal vivo e strumenti veri.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/organizza" className="rounded-full bg-gold px-6 py-3 font-semibold text-ink hover:bg-cream">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Link href="/organizza" className="rounded-full bg-gold px-6 py-3 text-center font-semibold text-ink hover:bg-cream">
             Prenota call gratuita
           </Link>
-          <Link href="/eventi" className="rounded-full border border-cream/30 px-6 py-3 hover:border-gold hover:text-gold">
+          <Link href="/eventi" className="rounded-full border border-cream/30 px-6 py-3 text-center hover:border-gold hover:text-gold">
             Scopri i 2 format
           </Link>
         </div>
-        <dl className="mt-12 grid max-w-2xl grid-cols-3 gap-4 text-sm">
+        <dl className="mt-10 grid max-w-2xl grid-cols-1 gap-3 text-sm sm:grid-cols-3 sm:gap-4">
           {[["200 ha", "tenuta agricola"], ["26", "posti letto in 5 alloggi"], ["150", "ospiti a bordo piscina"]].map(([v, l]) => (
             <div key={l} className="rounded-2xl border border-white/10 bg-white/5 p-4">
               <dt className="font-display text-2xl text-gold">{v}</dt>

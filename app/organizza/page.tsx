@@ -12,7 +12,7 @@ export const metadata = { title: "Organizza — Isola Events" };
 
 export default function OrganizzaPage() {
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14">
+    <div className="w-full px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
       <SectionHeading
         kicker="Organizza"
         title="Raccontaci l'idea, al resto pensiamo noi."

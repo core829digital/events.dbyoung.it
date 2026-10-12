@@ -2,7 +2,7 @@ export const metadata = { title: "Privacy — Isola Events" };
 
 export default function Privacy() {
   return (
-    <div className="mx-auto max-w-3xl px-5 py-14 text-cream/80">
+    <div className="mx-auto w-full max-w-3xl px-4 py-12 text-cream/80 sm:px-6 sm:py-14">
       <h1 className="font-display text-4xl text-cream">Privacy Policy</h1>
       <p className="mt-4 text-sm">Titolare: Dimitri Bouterline · Isola Events · Fattoria Isola, Laterina (AR) · booking@dbyoung.it</p>
       <h2 className="mt-8 font-display text-2xl text-cream">Dati raccolti</h2>
