@@ -42,7 +42,7 @@
 - [x] Installare dipendenze: `convex resend framer-motion lucide-react react-calendly zod` OK (`@types/react-calendly` non esiste su npm — si usa embed iframe, niente tipi separati)
 - [ ] Configurare Tailwind theme DBYoung (oro/verde Toscana, serif elegante + sans moderno), font, metadata SEO IT/EN
 - [ ] Pagine: `/` `/eventi` `/eventi/[slug]` `/location` `/organizza` `/grazie` `/privacy` `/api/send`
-- [ ] Componenti 21st.dev-style: hero cinematico, marquee, card eventi, galleria lightbox, pricing, FAQ, footer
+- [ ] Componenti 21st.dev-style: hero cinematico, marquee, card eventi, galleria lightbox, CTA call, FAQ, footer
 - [ ] Form "Richiedi preventivo" (Tipo A/B switch) → validazione zod → Convex `bookings` → email Resend a booking@dbyoung.it + conferma utente
 - [ ] Embed Calendly (call 30min gratis) con fallback link diretto
 - [ ] `convex/schema.ts`: `events`, `bookings`, `gallery`, `testimonials` + seed eventi demo
