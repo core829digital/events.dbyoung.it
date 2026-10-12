@@ -50,7 +50,7 @@ const it = {
   organizzaPage: {
     kicker: "Organizza",
     title: "Raccontaci l'idea, al resto pensiamo noi.",
-    sub: "Due strade: partecipa a un evento firmato Dimitri, oppure organizza il tuo in location. Prenota la call gratuita da 30 minuti — oppure lasciaci un messaggio e ti risponderemo entro 24–48h.",
+    sub: "Prenota la call gratuita da 30 minuti: raccontaci ospiti, data e idea — al resto pensiamo noi.",
   },
   form: {
     kindDimitri: "Evento firmato Dimitri",
@@ -155,7 +155,7 @@ const en: Dict = {
   organizzaPage: {
     kicker: "Book",
     title: "Tell us the idea, we'll handle the rest.",
-    sub: "Two paths: join an event curated by Dimitri, or host yours at the venue. Book a free 30-minute call — or leave us a message and we'll reply within 24–48h.",
+    sub: "Book a free 30-minute call: tell us guests, date and idea — we'll handle the rest.",
   },
   form: {
     kindDimitri: "Curated by Dimitri",

@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 import type { Lang } from "@/lib/i18n";
 import { t } from "@/lib/i18n";
 
-export function CalendlyEmbed({ lang }: { lang: Lang }) {
+export function CalendlyEmbed({ lang, height = "h-[700px]" }: { lang: Lang; height?: string }) {
   const d = t(lang).calendly;
   const url = site.calendlyUrl;
   const isPlaceholder = url.includes("tuo-nome");
@@ -23,7 +23,7 @@ export function CalendlyEmbed({ lang }: { lang: Lang }) {
         <iframe
           src={url}
           title={d.iframeTitle}
-          className="h-[700px] w-full bg-cream"
+          className={`${height} w-full bg-cream`}
           loading="lazy"
         />
       )}
