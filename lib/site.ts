@@ -24,6 +24,8 @@ export interface SiteEvent {
   tagline: string;
   description: string;
   image: string;
+  /** URL remoto usato finché l'originale non è in public/location/ */
+  imageFallback: string;
   capacity: string;
   music: string;
   priceFrom: string;
@@ -44,6 +46,7 @@ export const events: SiteEvent[] = [
     description:
       "Il format firmato Dimitri Bouterline: quartetto jazz-blues con strumenti veri, cena toscana a bordo piscina 7×14 e parco secolare illuminato. Direzione artistica, band e produzione curate da DBYoung.",
     image: "/location/piscina-sera.jpg",
+    imageFallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/festa-alla-Fattoria-dellIsola-1024x576.jpg",
     capacity: "80–150 ospiti",
     music: "Jazz · Blues · Soul con strumenti veri",
     priceFrom: "da €39 / ospite",
@@ -62,6 +65,7 @@ export const events: SiteEvent[] = [
     description:
       "Piano, archi e fiati nella villa seicentesca già del Granduca di Toscana, con la cappella privata per cerimonie. Il ponte di DBYoung tra tradizione classica e suono moderno.",
     image: "/location/villa-parco.jpg",
+    imageFallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/parco-villa-da-sopra1.jpg",
     capacity: "60–120 ospiti",
     music: "Classica · Crossover moderno",
     priceFrom: "da €45 / ospite",
@@ -80,6 +84,7 @@ export const events: SiteEvent[] = [
     description:
       "Affitta gli spazi e organizza il tuo giorno con i tuoi fornitori: rito in cappella o nel parco, ricevimento a bordo piscina, foto con carrozza e cavalli, notte nei 5 appartamenti in stile toscano.",
     image: "/location/cappella.jpg",
+    imageFallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/Cappella-765x1024.jpg",
     capacity: "fino a 150 ospiti · 26 posti letto",
     music: "La tua musica — service e palco disponibili",
     priceFrom: "location da €1.900 / giorno",
@@ -98,6 +103,7 @@ export const events: SiteEvent[] = [
     description:
       "Yoga al parco, trekking, mountain bike, equitazione e pensione cavalli, calcio/volley/bocce/ping-pong. Un set autentico per brand, produzioni e team che vogliono staccare davvero.",
     image: "/location/cavalli.jpg",
+    imageFallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/cavalli-1024x576.jpg",
     capacity: "10–80 ospiti",
     music: "Silenzio della campagna + live su richiesta",
     priceFrom: "location da €900 / giorno",

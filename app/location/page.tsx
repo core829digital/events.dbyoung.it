@@ -1,6 +1,10 @@
-import { Gallery } from "@/components/Gallery";
+import dynamic from "next/dynamic";
 import { SectionHeading } from "@/components/SectionHeading";
 import { spaces, site } from "@/lib/site";
+
+const Gallery = dynamic(() => import("@/components/Gallery").then((m) => m.Gallery), {
+  loading: () => <div className="grid grid-cols-2 gap-3 md:grid-cols-4">{Array.from({ length: 8 }).map((_, i) => <div key={i} className="h-44 animate-pulse rounded-2xl bg-white/5 md:h-56" />)}</div>,
+});
 
 export const metadata = { title: "Location — Fattoria Isola" };
 

@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { events, type EventKind } from "@/lib/site";
 import { Reveal } from "./Reveal";
+import { SmartImage } from "./SmartImage";
 
 export function EventCards({ filter }: { filter?: EventKind }) {
   const list = filter ? events.filter((e) => e.kind === filter) : events;
@@ -10,13 +10,13 @@ export function EventCards({ filter }: { filter?: EventKind }) {
       {list.map((e, i) => (
         <Reveal key={e.slug} delay={(i % 2) * 0.08}>
           <article className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-gold/50">
-            <div className="relative h-56">
-              <Image
+            <div className="relative h-56 bg-ink-soft">
+              <SmartImage
                 src={e.image}
+                fallback={e.imageFallback}
                 alt={e.title}
-                fill
-                className="object-cover transition duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition duration-700 group-hover:scale-105"
               />
               <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs uppercase tracking-widest text-gold">
                 {e.kind === "dimitri" ? "Firmato Dimitri" : "Organizza tu"}

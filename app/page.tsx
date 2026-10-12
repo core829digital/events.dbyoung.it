@@ -1,10 +1,16 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { EventCards } from "@/components/EventCards";
-import { Gallery } from "@/components/Gallery";
-import { Pricing } from "@/components/Pricing";
 import { SectionHeading } from "@/components/SectionHeading";
 import { spaces, site } from "@/lib/site";
+
+const Gallery = dynamic(() => import("@/components/Gallery").then((m) => m.Gallery), {
+  loading: () => <div className="grid grid-cols-2 gap-3 md:grid-cols-4">{Array.from({ length: 8 }).map((_, i) => <div key={i} className="h-44 animate-pulse rounded-2xl bg-white/5 md:h-56" />)}</div>,
+});
+const Pricing = dynamic(() => import("@/components/Pricing").then((m) => m.Pricing), {
+  loading: () => <div className="grid gap-6 md:grid-cols-3">{Array.from({ length: 3 }).map((_, i) => <div key={i} className="h-64 animate-pulse rounded-3xl bg-white/5" />)}</div>,
+});
 
 export default function Home() {
   return (

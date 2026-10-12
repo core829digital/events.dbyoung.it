@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { events } from "@/lib/site";
+import { SmartImage } from "@/components/SmartImage";
 
 export function generateStaticParams() {
   return events.map((e) => ({ slug: e.slug }));
@@ -15,8 +15,8 @@ export default async function EventDetail({ params }: { params: Promise<{ slug: 
     <article className="mx-auto max-w-4xl px-5 py-14">
       <p className="text-xs uppercase tracking-[0.25em] text-gold">{ev.tagline}</p>
       <h1 className="mt-2 font-display text-4xl text-cream sm:text-5xl">{ev.title}</h1>
-      <div className="relative mt-6 h-72 overflow-hidden rounded-3xl border border-white/10">
-        <Image src={ev.image} alt={ev.title} fill className="object-cover" sizes="100vw" />
+      <div className="relative mt-6 h-72 overflow-hidden rounded-3xl border border-white/10 bg-ink-soft">
+        <SmartImage src={ev.image} fallback={ev.imageFallback} alt={ev.title} sizes="100vw" className="object-cover" />
       </div>
       <p className="mt-6 text-lg text-cream/80">{ev.description}</p>
       <ul className="mt-6 space-y-2 text-cream/80">

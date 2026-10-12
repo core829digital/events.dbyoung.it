@@ -1,6 +1,12 @@
-import { QuoteForm } from "@/components/QuoteForm";
-import { CalendlyEmbed } from "@/components/CalendlyEmbed";
+import dynamic from "next/dynamic";
 import { SectionHeading } from "@/components/SectionHeading";
+
+const QuoteForm = dynamic(() => import("@/components/QuoteForm").then((m) => m.QuoteForm), {
+  loading: () => <div className="h-96 animate-pulse rounded-3xl bg-white/5" />,
+});
+const CalendlyEmbed = dynamic(() => import("@/components/CalendlyEmbed").then((m) => m.CalendlyEmbed), {
+  loading: () => <div className="h-96 animate-pulse rounded-3xl bg-white/5" />,
+});
 
 export const metadata = { title: "Organizza — Isola Events" };
 

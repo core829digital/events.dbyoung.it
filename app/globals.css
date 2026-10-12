@@ -1,23 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #141109;
-  --color-cream: #faf6ee;
-  --color-gold: #c9a227;
-  --color-olive: #5b6b3f;
+  /* Palette elegante e tenue: carbone caldo, crema avorio, champagne opaco */
+  --color-ink: #191510;
+  --color-ink-soft: #221d16;
+  --color-cream: #f2ecdf;
+  --color-sand: #e3d7bf;
+  --color-gold: #b49a67;
+  --color-gold-soft: #cbb586;
+  --color-olive: #77755c;
+  --color-clay: #a3805c;
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
 :root {
-  --background: #141109;
-  --foreground: #faf6ee;
+  --background: #191510;
+  --foreground: #f2ecdf;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* Niente scroll-behavior CSS: lo smooth scroll è gestito da Lenis (vedi SmoothScroll). */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -26,4 +28,9 @@ body {
 
 .font-display {
   font-family: var(--font-display);
+}
+
+::selection {
+  background: #b49a67;
+  color: #191510;
 }
