@@ -14,7 +14,7 @@
     3. Workaround immediato: usare `npm.cmd` / `npx.cmd`
 - [x] Fix PowerShell ExecutionPolicy `CurrentUser → RemoteSigned` OK
 - [x] Riavvio non necessario: PATH refresh OK, `npm`/`npx` funzionano in PowerShell (RemoteSigned). Riverifica finale con nuovo terminale consigliata
-- [ ] `git init` + commit iniziale + push su GitHub + auto-deploy Vercel
+- [x] `git init` + commit iniziale OK (`992a8d0`). Restano: creare repo su GitHub, `git remote add origin`, push, import su Vercel
 
 ## 1. Analisi (precisione atomica) — DONE
 
@@ -38,7 +38,7 @@
 ## 3. Scaffolding Next.js + TS (in corso)
 
 - [x] `create-next-app ./events-app` + `robocopy /MOVE` in root OK
-- [ ] Rinominare `package.json` → `events-dbyoung-it`, pulire `.next/`, verificare `npm run dev` / `build`
+- [x] Rinominare `package.json` → `events-dbyoung-it`, verificare `npm run build` OK (15 pagine statiche + /api/send dinamica)
 - [x] Installare dipendenze: `convex resend framer-motion lucide-react react-calendly zod` OK (`@types/react-calendly` non esiste su npm — si usa embed iframe, niente tipi separati)
 - [ ] Configurare Tailwind theme DBYoung (oro/verde Toscana, serif elegante + sans moderno), font, metadata SEO IT/EN
 - [ ] Pagine: `/` `/eventi` `/eventi/[slug]` `/location` `/organizza` `/grazie` `/privacy` `/api/send`
