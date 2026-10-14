@@ -1,5 +1,4 @@
 export type Lang = "it" | "en";
-export const LANGS: Lang[] = ["it", "en"];
 export const LANG_COOKIE = "ev-lang";
 
 const it = {
@@ -54,28 +53,6 @@ const it = {
     kicker: "Organizza",
     title: "Raccontaci l'idea, al resto pensiamo noi.",
     sub: "Prenota la call gratuita da 30 minuti: raccontaci ospiti, data e idea — al resto pensiamo noi.",
-  },
-  form: {
-    kindDimitri: "Evento firmato Dimitri",
-    kindTerzi: "Organizzo io in location",
-    name: "Nome e cognome",
-    namePh: "Maria Rossi",
-    email: "Email",
-    emailPh: "maria@email.it",
-    phone: "Telefono",
-    phonePh: "+39 ...",
-    date: "Data desiderata",
-    guests: "Ospiti",
-    format: "Format",
-    undecided: "Da definire in call",
-    message: "La tua idea",
-    messagePh: "Matrimonio di 80 persone a giugno, rito in cappella, cena a bordo piscina...",
-    privacy: "Ho letto e accetto la",
-    privacyLink: "Privacy Policy",
-    sending: "Invio...",
-    submit: "Invia la richiesta →",
-    note: "Risposta entro 24–48h · oppure prenota subito la call qui sotto",
-    sendError: "Invio non riuscito, riprova o scrivi a contact@dbyoung.it",
   },
   calendly: {
     title: "Call conoscitiva gratuita · 30 min",
@@ -165,28 +142,6 @@ const en: Dict = {
     kicker: "Book",
     title: "Tell us the idea, we'll handle the rest.",
     sub: "Book a free 30-minute call: tell us guests, date and idea — we'll handle the rest.",
-  },
-  form: {
-    kindDimitri: "Curated by Dimitri",
-    kindTerzi: "I'll host at the venue",
-    name: "Full name",
-    namePh: "Mary Smith",
-    email: "Email",
-    emailPh: "mary@email.com",
-    phone: "Phone",
-    phonePh: "+39 ...",
-    date: "Preferred date",
-    guests: "Guests",
-    format: "Format",
-    undecided: "To decide on the call",
-    message: "Your idea",
-    messagePh: "Wedding for 80 in June, chapel ceremony, poolside dinner...",
-    privacy: "I have read and accept the",
-    privacyLink: "Privacy Policy",
-    sending: "Sending...",
-    submit: "Send the request →",
-    note: "Reply within 24–48h · or book the call right below",
-    sendError: "Sending failed, please retry or write to contact@dbyoung.it",
   },
   calendly: {
     title: "Free introductory call · 30 min",

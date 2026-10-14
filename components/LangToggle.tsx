@@ -2,14 +2,14 @@
 
 import { useRouter } from "next/navigation";
 import type { Lang } from "@/lib/i18n";
-import { LANG_COOKIE } from "@/lib/i18n";
+import { setLangCookie } from "@/lib/actions";
 
 /** Selettore lingua IT/EN come su dbyoung.it (salvato in cookie + refresh). */
 export function LangToggle({ lang }: { lang: Lang }) {
   const router = useRouter();
-  function setLang(l: Lang) {
+  async function setLang(l: Lang) {
     if (l === lang) return;
-    document.cookie = `${LANG_COOKIE}=${l}; path=/; max-age=31536000; SameSite=Lax`;
+    await setLangCookie(l);
     router.refresh();
   }
   return (

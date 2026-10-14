@@ -25,7 +25,7 @@ export function Hero({ lang }: { lang: Lang }) {
     <section className="relative flex min-h-[100svh] overflow-hidden bg-ink text-cream">
       <div className="absolute inset-0">
         <Image
-          src="https://fattoriaisola.com/wp-content/uploads/2019/12/parco-villa-da-sopra1.jpg"
+          src="/location/villa-parco.jpg"
           alt={lang === "it" ? "Fattoria Isola dall'alto — villa seicentesca e parco" : "Fattoria Isola from above — 17th-century villa and park"}
           fill
           priority

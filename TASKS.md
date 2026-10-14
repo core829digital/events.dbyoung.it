@@ -24,6 +24,7 @@
 - [x] Analizzare `/it/servizi/` (piscina 7x14 + idromassaggio, gazebo, equitazione/pensione cavalli, calcio/volley/bocce/ping-pong, MTB, trekking, BBQ — piscina adatta a feste)
 - [x] Analizzare `/it/appartamenti/` (Colombaia 55mq/5p, Mulino 50mq/5p vista piscina, Fattoria 80mq/6p mobili antichi, Officina 45mq/4p, Falegnameria 60mq/6p accessibile)
 - [x] Foto originali della tenuta integrate (fallback remoti solo come scorta di sicurezza)
+- [x] Audit completo: nessuna pagina admin esistente (solo parola in testo GDPR da dbyoung.it) · rimosso `react-calendly` mai importato + SVG template + dict `form`/`LANGS` inutilizzati · `/api/send`+`/grazie` tenuti come canale di riserva Resend
   - `1.jpg` (panoramica), `laterina_2_bis.jpg`, `carrozza-e-paese-medievale`, `parco-villa-da-sopra1.jpg`
   - `Piscina-HD.jpg`, `piscina_con-verde_bella.jpg`, `festa-alla-Fattoria-dellIsola.jpg`, `gazebo-e-piscina.jpg`
   - `horse.jpg`, `carrozza-davanti-alla-fattoria`, `DIMITRI-A-CAVALLO.jpg`, appartamenti `M_040.jpg`, `F_DSCF2971.jpg`, `C_soggiorno...`, ecc.
@@ -39,7 +40,7 @@
 
 - [x] `create-next-app ./events-app` + `robocopy /MOVE` in root OK
 - [x] Rinominare `package.json` → `events-dbyoung-it`, verificare `npm run build` OK (15 pagine statiche + /api/send dinamica)
-- [x] Installare dipendenze: `convex resend framer-motion lucide-react react-calendly zod` OK (`@types/react-calendly` non esiste su npm — si usa embed iframe, niente tipi separati)
+- [x] Dipendenze pulite: rimosso `react-calendly` (mai importato, si usa embed iframe) e SVG template inutilizzati
 - [ ] Configurare Tailwind theme DBYoung (oro/verde Toscana, serif elegante + sans moderno), font, metadata SEO IT/EN
 - [ ] Pagine: `/` `/eventi` `/eventi/[slug]` `/location` `/organizza` `/grazie` `/privacy` `/api/send`
 - [ ] Componenti 21st.dev-style: hero cinematico, marquee, card eventi, galleria lightbox, CTA call, FAQ, footer
