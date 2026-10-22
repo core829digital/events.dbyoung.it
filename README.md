@@ -1,6 +1,6 @@
 # Eventi DBYoung — events.dbyoung.it
 
-Portale eventi di **Dimitri Bouterline (DBYoung)** presso **Fattoria Isola, Laterina (AR)**.
+Portale eventi di **Dimitri Boutourline (DBYoung)** presso **Fattoria Isola, Laterina (AR)**.
 Due format: **1) eventi firmati Dimitri** · **2) eventi organizzati da terzi in location**.
 Positioning: esperienza premium su misura — nessun listino pubblico, ogni lead va in call Calendly.
 

@@ -7,7 +7,7 @@ const it = {
     badge: "Fattoria Isola · Laterina, Toscana",
     titleA: "Eventi premium,",
     titleB: "senza pensieri.",
-    sub: "Villa seicentesca, parco secolare, piscina e cappella privata su 200 ettari. Partecipa agli eventi firmati Dimitri Bouterline — oppure organizza il tuo, con band dal vivo e strumenti veri.",
+    sub: "Villa seicentesca, parco secolare, piscina e cappella privata su 200 ettari. Partecipa agli eventi firmati Dimitri Boutourline — oppure organizza il tuo, con band dal vivo e strumenti veri.",
     ctaCall: "Prenota call gratuita",
     ctaFormats: "Scopri i 2 format",
     stats: [["200 ha", "tenuta agricola"], ["26", "posti letto in 5 alloggi"], ["150", "ospiti a bordo piscina"]] as [string, string][],
@@ -36,7 +36,7 @@ const it = {
   eventiPage: {
     kicker: "Eventi DBYoung",
     title: "Due modi di vivere la tenuta.",
-    sub: "Tipo 1 — Eventi organizzati da Dimitri Bouterline. Tipo 2 — Eventi che organizzi tu in Fattoria Isola, con il nostro supporto se lo vuoi.",
+    sub: "Tipo 1 — Eventi organizzati da Dimitri Boutourline. Tipo 2 — Eventi che organizzi tu in Fattoria Isola, con il nostro supporto se lo vuoi.",
     type1: "Tipo 1 · Firmati Dimitri",
     type2: "Tipo 2 · Organizza tu in location",
   },
@@ -82,7 +82,7 @@ const it = {
   },
   meta: {
     title: "Eventi DBYoung — Eventi premium in Toscana | Fattoria Isola",
-    description: "Eventi firmati Dimitri Bouterline (DBYoung) o organizzati da te in Fattoria Isola, Laterina: villa seicentesca, piscina, parco e cappella. Premium, su misura.",
+    description: "Eventi firmati Dimitri Boutourline (DBYoung) o organizzati da te in Fattoria Isola, Laterina: villa seicentesca, piscina, parco e cappella. Premium, su misura.",
     ogDescription: "Jazz, blues, classica e moderna con strumenti veri — oppure la tua festa nella tenuta toscana.",
     twitterDescription: "Eventi premium senza pensieri in Toscana — prenota la call gratuita.",
   },
@@ -96,7 +96,7 @@ const en: Dict = {
     badge: "Fattoria Isola · Laterina, Tuscany",
     titleA: "Premium events,",
     titleB: "without the hassle.",
-    sub: "A 17th-century villa, centuries-old park, pool and private chapel on 200 hectares. Join Dimitri Bouterline's signature events — or host your own, with a live band and real instruments.",
+    sub: "A 17th-century villa, centuries-old park, pool and private chapel on 200 hectares. Join Dimitri Boutourline's signature events — or host your own, with a live band and real instruments.",
     ctaCall: "Book a free call",
     ctaFormats: "Discover the 2 formats",
     stats: [["200 ha", "working estate"], ["26", "beds in 5 apartments"], ["150", "guests by the pool"]] as [string, string][],
@@ -125,7 +125,7 @@ const en: Dict = {
   eventiPage: {
     kicker: "Eventi DBYoung",
     title: "Two ways to experience the estate.",
-    sub: "Type 1 — Events hosted by Dimitri Bouterline. Type 2 — Events you host at Fattoria Isola, with our support if you want it.",
+    sub: "Type 1 — Events hosted by Dimitri Boutourline. Type 2 — Events you host at Fattoria Isola, with our support if you want it.",
     type1: "Type 1 · Curated by Dimitri",
     type2: "Type 2 · Host yours at the venue",
   },
@@ -171,7 +171,7 @@ const en: Dict = {
   },
   meta: {
     title: "Eventi DBYoung — Premium events in Tuscany | Fattoria Isola",
-    description: "Events curated by Dimitri Bouterline (DBYoung) or hosted by you at Fattoria Isola, Laterina: 17th-century villa, pool, park and chapel. Premium, tailor-made.",
+    description: "Events curated by Dimitri Boutourline (DBYoung) or hosted by you at Fattoria Isola, Laterina: 17th-century villa, pool, park and chapel. Premium, tailor-made.",
     ogDescription: "Jazz, blues, classical and modern with real instruments — or your party on the Tuscan estate.",
     twitterDescription: "Hassle-free premium events in Tuscany — book a free call.",
   },

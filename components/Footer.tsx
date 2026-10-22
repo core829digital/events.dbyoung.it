@@ -46,7 +46,7 @@ export function Footer({ lang }: { lang: Lang }) {
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-cream/50">
-        © 2026 Eventi DBYoung · Dimitri Bouterline · {d.footer.rights}
+        © 2026 Eventi DBYoung · Dimitri Boutourline · {d.footer.rights}
       </div>
     </footer>
   );

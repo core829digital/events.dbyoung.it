@@ -1,6 +1,6 @@
 # EVENTS.DBYOUNG.IT — Task List
 
-> Portale eventi premium-accessibili di Dimitri Bouterline / DBYoung @ Fattoria Isola, Laterina (Toscana).
+> Portale eventi premium-accessibili di Dimitri Boutourline / DBYoung @ Fattoria Isola, Laterina (Toscana).
 > Stack: Next.js + TypeScript + Convex + Resend + Calendly + GitHub + Vercel + 21st.dev
 
 ## 0. Toolchain & Ambiente (richiesta esplicita utente)

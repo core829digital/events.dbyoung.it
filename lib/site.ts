@@ -2,7 +2,7 @@ import type { Lang } from "./i18n";
 
 export const site = {
   name: "Eventi DBYoung",
-  byline: "di Dimitri Bouterline · DBYoung",
+  byline: "di Dimitri Boutourline · DBYoung",
   domain: "events.dbyoung.it",
   location: "Fattoria Isola · Via Vecchia Aretina 70, 52020 Laterina (AR) · Toscana",
   emailFrom: process.env.RESEND_FROM ?? "Eventi DBYoung <contact@dbyoung.it>",
@@ -53,7 +53,7 @@ export const events: SiteEvent[] = [
     title: "Serata Jazz & Blues sotto le stelle",
     tagline: "Eventi DBYoung presenta · a bordo piscina",
     description:
-      "Il format firmato Dimitri Bouterline: quartetto jazz-blues con strumenti veri, cena toscana a bordo piscina 7×14 e parco secolare illuminato. Direzione artistica, band e produzione curate da DBYoung.",
+      "Il format firmato Dimitri Boutourline: quartetto jazz-blues con strumenti veri, cena toscana a bordo piscina 7×14 e parco secolare illuminato. Direzione artistica, band e produzione curate da DBYoung.",
     image: "/location/piscina-sera.jpg",
     imageFallback: "https://fattoriaisola.com/wp-content/uploads/2019/12/festa-alla-Fattoria-dellIsola-1024x576.jpg",
     capacity: "80–150 ospiti",
@@ -68,7 +68,7 @@ export const events: SiteEvent[] = [
       title: "Jazz & Blues Night Under the Stars",
       tagline: "Eventi DBYoung presents · poolside",
       description:
-        "Dimitri Bouterline's signature format: a live jazz-blues quartet with real instruments, Tuscan dinner by the 7×14 pool and the illuminated centuries-old park. Artistic direction, band and production by DBYoung.",
+        "Dimitri Boutourline's signature format: a live jazz-blues quartet with real instruments, Tuscan dinner by the 7×14 pool and the illuminated centuries-old park. Artistic direction, band and production by DBYoung.",
       capacity: "80–150 guests",
       music: "Jazz · Blues · Soul with real instruments",
       highlights: [
