@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="it" className={`${display.variable} ${sans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col overflow-x-clip bg-ink text-cream">
         <SmoothScroll />
-        <Suspense fallback={<Navbar lang="it" />}>
+        <Suspense fallback={<Navbar lang="it" user={null} />}>
           <NavbarSlot />
         </Suspense>
         <main className="flex-1">{children}</main>

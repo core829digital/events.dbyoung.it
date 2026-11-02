@@ -65,4 +65,24 @@
 - [ ] Consegnare credenziali/checklist a Dimitri (Calendly, Resend, Convex, Vercel)
 
 ---
-*Ultimo aggiornamento: 12-10-2026. Toolchain: node v24.20.0, npm/npx 11.19.0, git 2.56.0.*
+## 6. Sistema eventi prenotabili + QR + backoffice — DONE
+
+- [x] Convex schema `users/sessions/events/bookings/tickets/reviews` (+ indici) e funzioni con guardie interne (`requireSession`/`requireRole`/`requireServer`)
+- [x] Auth completa: registrazione/login/logout, scrypt (N=2^15), sessioni opache `ev-sess` (sha256 in DB), rate limit per IP e per account, safe redirect
+- [x] Ruoli Client / Admin / Founder con bootstrap founder (`AUTH_FOUNDER_EMAIL`) e gestione ruoli dal founder
+- [x] Portale `/account` del cliente: QR, stato prenotazioni, retry checkout, cancella pending, recensioni
+- [x] Backoffice: dashboard statistiche, CRUD eventi (form allowlist), pubblicazione, ospiti + check-in live, scanner QR camera + manuale, utenti (founder)
+- [x] Prenotazione: posti atomici con grazia 45', quantità = persone, dati per persona (nome, cognome, DOB, codice fiscale validato)
+- [x] Pagamenti: Stripe Checkout reale + webhook firmato con verifica importo; in assenza chiavi, percorso dev simulato identico
+- [x] Ticket QR firmati HMAC (`EVQ1` + codice + firma), PNG pubblico solo per ticket pagati, email Resend con QR (console in dev)
+- [x] Check-in: endpoint `/api/backoffice/checkin` con sessione admin/founder, firma verificata, doppioni e evento sbagliato rifiutati
+- [x] Recensioni 1–5 stelle post-evento (una per persona), visibili sulla pagina dell'evento
+- [x] Sicurezza: validazione/sanitizzazione zod, escape email, CSP/HSTS/nosniff/Referrer/Permissions, host allowlist, IP allowlist backoffice server-side
+- [x] Mobile-first su tutte le pagine (phone first: QR e scanner dal telefono)
+- [x] i18n IT/EN per tutti i nuovi flussi
+- [x] E2E verificato in locale: registrazione founder → evento pubblicato → prenotazione 2 persone → ticket + QR PNG → check-in (e doppio rifiutato) → recensione
+- [ ] Chiavi reali (Stripe test/live, Resend, Convex produzione) e IP allowlist in `.env` di Vercel
+
+---
+
+*Ultimo aggiornamento: 02-11-2026. Toolchain: node v24.20.0, npm/npx 11.19.0, git 2.56.0.*

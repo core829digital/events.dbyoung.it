@@ -6,15 +6,19 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { t } from "@/lib/i18n";
+import type { SessionUser } from "@/lib/server/session";
 import { LangToggle } from "./LangToggle";
 
-export function Navbar({ lang }: { lang: Lang }) {
+export function Navbar({ lang, user }: { lang: Lang; user: SessionUser | null }) {
   const [open, setOpen] = useState(false);
   const d = t(lang).nav;
   const links = [
     { href: "/eventi", label: d.events },
     { href: "/location", label: d.location },
   ];
+  const account = user
+    ? { href: "/account", label: user.name || d.account }
+    : { href: "/login", label: d.account };
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur">
       <div className="flex w-full items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-10">
@@ -38,6 +42,7 @@ export function Navbar({ lang }: { lang: Lang }) {
             <Link key={l.href} className="hover:text-gold" href={l.href}>{l.label}</Link>
           ))}
           <LangToggle lang={lang} />
+          <Link className="hover:text-gold" href={account.href}>{account.label}</Link>
           <Link
             href="/organizza"
             className="rounded-full bg-gold px-5 py-2.5 font-semibold text-ink transition hover:bg-cream"
@@ -67,7 +72,7 @@ export function Navbar({ lang }: { lang: Lang }) {
       {open && (
         <nav className="border-t border-white/10 px-4 py-3 md:hidden">
           <ul className="space-y-1 text-base">
-            {[{ href: "/", label: d.home }, ...links].map((l) => (
+            {[{ href: "/", label: d.home }, ...links, account].map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}

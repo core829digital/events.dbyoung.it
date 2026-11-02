@@ -1,38 +1,36 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { events, localizeEvent } from "@/lib/site";
+import { convex, asId } from "@/lib/server/convex";
+import { api } from "@/convex/_generated/api";
 import { getLang } from "@/lib/lang-server";
-import { t } from "@/lib/i18n";
+import { localizeEvent } from "@/lib/site";
+import { events } from "@/lib/site";
+import { EventStaticDetail } from "@/components/EventStaticDetail";
+import { BookableEventDetail } from "@/components/BookableEventDetail";
 
-import { SmartImage } from "@/components/SmartImage";
+export const dynamic = "force-dynamic";
 
-export function generateStaticParams() {
-  return events.map((e) => ({ slug: e.slug }));
-}
-
+/**
+ * Disambigua: un slug può riferirsi a
+ * 1) un evento prenotabile (creato da Dimitri nel backoffice, dati Convex) —
+ *    pagina attiva con prenotazione Stripe + QR; oppure
+ * 2) un format statico del marketing (lib/site.ts) con CTA call.
+ * Nomi KISS: i prenotabili hanno slug unici creati nel backoffice.
+ */
 export default async function EventDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) || slug.length > 60) notFound();
   const lang = await getLang();
-  const d = t(lang).eventDetail;
+
+  const bookable = await convex().query(api.events.publicEvent, { slug });
+  if (bookable) {
+    const reviews = await convex().query(api.events.publicEventReviews, {
+      eventId: asId("events", String(bookable._id)),
+    });
+    return <BookableEventDetail ev={bookable} reviews={reviews} lang={lang} />;
+  }
+
   const raw = events.find((e) => e.slug === slug);
   if (!raw) notFound();
   const ev = localizeEvent(raw, lang);
-  return (
-    <article className="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-      <p className="text-xs uppercase tracking-[0.25em] text-gold">{ev.tagline}</p>
-      <h1 className="mt-2 font-display text-3xl text-cream sm:text-4xl lg:text-5xl">{ev.title}</h1>
-      <div className="relative mt-6 h-56 overflow-hidden rounded-3xl border border-white/10 bg-ink-soft sm:h-72">
-        <SmartImage src={ev.image} fallback={ev.imageFallback} alt={ev.title} sizes="100vw" className="object-cover" />
-      </div>
-      <p className="mt-6 text-lg text-cream/80">{ev.description}</p>
-      <ul className="mt-6 space-y-2 text-cream/80">
-        {ev.highlights.map((h) => <li key={h}>✓ {h}</li>)}
-      </ul>
-      <p className="mt-6 text-cream/70">{ev.capacity} · {ev.music}</p>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/organizza" className="rounded-full bg-gold px-6 py-3 font-semibold text-ink hover:bg-cream">{d.cta}</Link>
-        <Link href="/eventi" className="rounded-full border border-cream/25 px-6 py-3 hover:border-gold hover:text-gold">{d.back}</Link>
-      </div>
-    </article>
-  );
+  return <EventStaticDetail slug={slug} lang={lang} />;
 }
